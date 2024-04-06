@@ -622,8 +622,8 @@ module Render = struct
 
   let pp_image = pp Cap.ansi
   let pp_attr ppf a =
-    let string_ = I.string A.empty in
-    pp_image ppf I.(string_ "<" <|> string a "ATTR" <|> string_ ">")
+    let string_ = I.string ~attr:A.empty in
+    pp_image ppf I.(string_ "<" <|> string ~attr:a "ATTR" <|> string_ ">")
 end
 
 module Unescape = struct
